@@ -1,37 +1,25 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
 
-  "title": "Billing.Refund.v1",
-  "description": "json schema for billing refund event (version 1)",
+  "title": "Tasks.Updated.V1",
+  "description": "json schema for tasks updated event (version 1)",
 
   "definitions": {
     "event_data": {
       "type": "object",
-      "properties": {
-        "order_id": {
-          "type": "integer"
-        },
-        "reason": {
-          "type": "string"
-        },
-        "account_uuid": {
-          "type": "string"
-        },
-        "timestamp": {
-          "type": "string"
-        }
+      "data": {
+        "public_id": "string",
+        "description": "string",
+        "user": "object"
       },
       "required": [
-        "order_id",
-        "account_uuid",
-        "timestamp"
       ]
     }
   },
 
   "type": "object",
 
-  "properties": {
+  "data": {
     "event_id":      { "type": "string" },
     "event_version": { "enum": [1] },
     "event_name":    { "type": "string" },
@@ -50,4 +38,3 @@
     "data"
   ]
 }
-
